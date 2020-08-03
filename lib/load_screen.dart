@@ -14,15 +14,16 @@ class LoadScreen extends StatelessWidget {
                     child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
-                      const RaisedButton(
-                        onPressed: null,
+                      RaisedButton(
+                        onPressed: () => {},
+                        splashColor: Colors.grey[200],
                         textColor: Colors.white,
                         child: Text('Enter...',
                             style: TextStyle(
                                 fontFamily: 'Bukhari',
                                 fontSize: 50,
                                 color: Colors.white)),
-                        color: Colors.white,
+                        color: Colors.transparent,
                       )
                     ])))));
   }

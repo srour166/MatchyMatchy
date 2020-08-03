@@ -24,46 +24,30 @@ class _WardrobePageState extends State<WardrobePage> {
                         fontFamily: 'Moontime',
                         fontSize: 50,
                         color: Colors.black))),
+            Container(),
             Container(
                 height: 500,
                 child: GridView.count(
                     scrollDirection: Axis.vertical,
                     crossAxisCount: 2,
-                    children: List.generate(51, (index) {
+                    children: List.generate(50, (index) {
                       return Container(
                         child: Card(
-                          margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
-                          // margin: EdgeInsets.only(
-                          //     left: 5, top: 5, right: 5, bottom: 5),
-                          color: Colors.white,
-                        ),
-                        // decoration: new BoxDecoration(
-                        //   boxShadow: [
-                        //     new BoxShadow(
-                        //       color: Colors.grey,
-                        //       blurRadius: 20.0, // soften the shadow
-                        //       spreadRadius: 1.0, //extend the shadow
-                        //       offset: Offset(
-                        //         0.0, // Move to right 10  horizontally
-                        //         5.0, // Move to bottom 10 Vertically
-                        //       ),
-                        //     ),
-                        //   ],
-                        // ),
+                            margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
+                            color: Colors.white,
+                            child: ButtonBar(
+                              alignment: MainAxisAlignment.start,
+                              children: <Widget>[
+                                IconButton(
+                                  icon: Icon(choices[3].icon,
+                                      color: Colors.grey[200], size: 30),
+                                  onPressed: () => {},
+                                  splashColor: Colors.grey,
+                                ),
+                              ],
+                            )),
                       );
                     }))),
-            // new GridView.count(
-            //     // Create a grid with 2 columns. If you change the scrollDirection to
-            //     // horizontal, this produces 2 rows.
-            //     crossAxisCount: 2,
-            //     children: List.generate(100, (index) {
-            //       return Center(
-            //           child: GridTile(
-            //               child: Text(
-            //         'Items $index',
-            //         style: Theme.of(context).textTheme.headline5,
-            //       )));
-            //     }))
           ]),
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -75,13 +59,13 @@ class _WardrobePageState extends State<WardrobePage> {
               style: TextStyle(
                   fontFamily: 'Bukhari', fontSize: 50, color: Colors.white)),
           leading: IconButton(
-            icon: Icon(choices[0].icon, color: Colors.white, size: 40),
-            onPressed: null,
-          ),
+              icon: Icon(choices[0].icon, color: Colors.white, size: 40),
+              onPressed: () => {},
+              splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
               icon: Icon(choices[1].icon, color: Colors.white, size: 40),
-              onPressed: null,
+              onPressed: () => {},
             )
           ]),
       bottomNavigationBar: BottomAppBar(
@@ -94,17 +78,20 @@ class _WardrobePageState extends State<WardrobePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                        iconSize: 30.0,
-                        padding: EdgeInsets.only(left: 10),
-                        icon: Icon(choices[2].icon,
-                            color: Colors.white, size: 70),
-                        onPressed: null),
+                      iconSize: 30.0,
+                      padding: EdgeInsets.only(left: 10),
+                      icon:
+                          Icon(choices[2].icon, color: Colors.white, size: 60),
+                      onPressed: () => {},
+                      splashColor: Colors.grey,
+                    ),
                     IconButton(
                         iconSize: 30.0,
                         padding: EdgeInsets.only(right: 50),
                         icon: Icon(choices[3].icon,
-                            color: Colors.white, size: 70),
-                        onPressed: null)
+                            color: Colors.white, size: 60),
+                        onPressed: () => {},
+                        splashColor: Colors.grey)
                   ]))),
     ));
   }

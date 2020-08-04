@@ -78,18 +78,18 @@ class _WardrobePageState extends State<WardrobePage> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     IconButton(
-                      iconSize: 30.0,
-                      padding: EdgeInsets.only(left: 10),
+                      iconSize: 40.0,
+                      // padding: EdgeInsets.only(left: 10),
                       icon:
                           Icon(choices[2].icon, color: Colors.white, size: 60),
                       onPressed: () => {},
                       splashColor: Colors.grey,
                     ),
                     IconButton(
-                        iconSize: 30.0,
-                        padding: EdgeInsets.only(right: 50),
+                        iconSize: 40.0,
+                        // padding: EdgeInsets.only(right: 0),
                         icon: Icon(choices[3].icon,
-                            color: Colors.white, size: 60),
+                            color: Colors.white, size: 50),
                         onPressed: () => {},
                         splashColor: Colors.grey)
                   ]))),

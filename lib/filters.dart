@@ -6,28 +6,49 @@ class FiltersPage extends StatefulWidget {
 }
 
 class _FiltersPageState extends State<FiltersPage> {
-  Widget checkbox(String title, bool boolValue) {
+  Widget itemCheckbox(Items item) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Row(
-          children: <Widget>[
-            Text(title),
-            Container(
-                alignment: Alignment.topLeft,
-                child: Checkbox(
-                    value: boolValue,
-                    onChanged: (bool value) {
-                      setState(() {
-                        for (int i = 0; i < items.length; i++) {
-                          if (title == items[i].title) {
-                            items[i].checkbox = value;
+        Container(
+            padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+            width: 120,
+            child: Align(
+              alignment: Alignment.center,
+              child: Row(
+                children: <Widget>[
+                  GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          if (item.checkbox == false) {
+                            item.imgPath = 'images/checked.png';
+                            item.checkbox = true;
+                          } else {
+                            item.imgPath = 'images/circle.png';
+                            item.checkbox = false;
                           }
-                        }
-                      });
-                    }))
-          ],
-        )
+                        });
+                      },
+                      child: Image(
+                        image: AssetImage(item.imgPath),
+                        fit: BoxFit.cover,
+                        // color: Colors.red,
+                        height: 20,
+                      )),
+                  Container(
+                    padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
+                  ),
+                  Container(
+                    margin: EdgeInsets.fromLTRB(1, 0, 1, 0),
+                    child: Text(item.title,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontFamily: 'OpenSans',
+                          color: Colors.black,
+                        )),
+                  )
+                ],
+              ),
+            ))
       ],
     );
   }
@@ -62,28 +83,24 @@ class _FiltersPageState extends State<FiltersPage> {
                 ),
                 color: Colors.white,
               ),
-              Row(
+              Column(
                 children: <Widget>[
-                  Container(
-                      margin: EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
-                      child: Column(
-                        children: <Widget>[
-                          checkbox(items[0].title, items[0].checkbox),
-                          checkbox(items[1].title, items[1].checkbox),
-                          checkbox(items[2].title, items[2].checkbox),
-                          checkbox(items[3].title, items[3].checkbox),
-                        ],
-                      )),
-                  Container(
-                      margin: EdgeInsets.fromLTRB(5.0, 3.0, 5.0, 3.0),
-                      child: Column(
-                        children: <Widget>[
-                          checkbox(items[4].title, items[4].checkbox),
-                          checkbox(items[5].title, items[5].checkbox),
-                          checkbox(items[6].title, items[6].checkbox),
-                          checkbox(items[7].title, items[7].checkbox),
-                        ],
-                      )),
+                  Row(children: <Widget>[
+                    itemCheckbox(items[0]),
+                    itemCheckbox(items[1]),
+                  ]),
+                  Row(children: <Widget>[
+                    itemCheckbox(items[2]),
+                    itemCheckbox(items[3]),
+                  ]),
+                  Row(children: <Widget>[
+                    itemCheckbox(items[4]),
+                    itemCheckbox(items[5]),
+                  ]),
+                  Row(children: <Widget>[
+                    itemCheckbox(items[6]),
+                    itemCheckbox(items[7]),
+                  ]),
                 ],
               )
             ])
@@ -137,21 +154,35 @@ class _FiltersPageState extends State<FiltersPage> {
 }
 
 class Items {
-  Items({this.title, this.checkbox});
+  Items({this.title, this.checkbox, this.imgPath});
 
   String title;
   bool checkbox;
+  String imgPath;
 }
 
+class Colours {
+  Colours({this.title, this.checkbox, this.defaultImg, this.checkedImgPath});
+
+  String title;
+  bool checkbox;
+  String defaultImg;
+  String checkedImgPath;
+}
+
+List<Colours> colors = <Colours>[
+  Colours(title: 'white', checkbox: false, defaultImg: '', checkedImgPath: '')
+];
+
 List<Items> items = <Items>[
-  Items(title: 'tops', checkbox: false),
-  Items(title: 'bottoms', checkbox: false),
-  Items(title: 'shoes', checkbox: false),
-  Items(title: 'one piece', checkbox: false),
-  Items(title: 'outerwear', checkbox: false),
-  Items(title: 'jewellery', checkbox: false),
-  Items(title: 'bags', checkbox: false),
-  Items(title: 'tights', checkbox: false),
+  Items(title: 'tops', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'bottoms', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'shoes', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'one piece', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'outerwear', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'jewellery', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'bags', checkbox: false, imgPath: 'images/circle.png'),
+  Items(title: 'tights', checkbox: false, imgPath: 'images/circle.png'),
 ];
 
 class Choice {

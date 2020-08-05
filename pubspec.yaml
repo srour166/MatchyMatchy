@@ -54,6 +54,23 @@ flutter:
     - images/circle.png
     - images/check.png
     - images/checked.png
+    - images/colorcircle.png
+    - images/sun.png
+    - images/wind.png
+    - images/snow.png
+    - images/rain.png
+    - images/cap.png
+    - images/crown.png
+    - images/thumbsup.png
+    - images/sparkles.png
+    - images/pink.png
+    - images/pinkcheck.png
+    - images/purple.png
+    - images/purplecheck.png
+    - images/white.png
+    - images/whitecheck.png
+    - images/yellow.png
+    - images/yellowcheck.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

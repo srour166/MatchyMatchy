@@ -3,6 +3,7 @@ import 'package:cluless1/load_screen.dart';
 import 'package:cluless1/wardrobe.dart';
 import 'package:cluless1/filters.dart';
 import 'package:cluless1/menu.dart';
+import 'package:cluless1/dress_yourself.dart';
 
 void main() {
   runApp(MyApp());

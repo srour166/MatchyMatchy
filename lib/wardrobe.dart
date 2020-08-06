@@ -1,3 +1,5 @@
+import 'package:cluless1/filters.dart';
+import 'package:cluless1/load_screen.dart';
 import 'package:flutter/material.dart';
 
 class WardrobePage extends StatefulWidget {
@@ -14,7 +16,12 @@ class _WardrobePageState extends State<WardrobePage> {
       body: Container(
           child: Column(children: <Widget>[
             FlatButton(
-                onPressed: () => {},
+                onPressed: () => {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => FiltersPage()),
+                      )
+                    },
                 textColor: Colors.white,
                 color: Color(0xFFd9d9d9),
                 padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
@@ -60,12 +67,17 @@ class _WardrobePageState extends State<WardrobePage> {
                   fontFamily: 'Bukhari', fontSize: 50, color: Colors.white)),
           leading: IconButton(
               icon: Icon(choices[0].icon, color: Colors.white, size: 40),
-              onPressed: () => {},
+              onPressed: () => {Navigator.pop(context)},
               splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
               icon: Icon(choices[1].icon, color: Colors.white, size: 40),
-              onPressed: () => {},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoadScreen()),
+                )
+              },
             )
           ]),
       bottomNavigationBar: BottomAppBar(

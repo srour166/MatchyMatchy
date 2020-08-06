@@ -1,3 +1,4 @@
+import 'package:cluless1/menu.dart';
 import 'package:flutter/material.dart';
 
 class LoadScreen extends StatelessWidget {
@@ -15,7 +16,12 @@ class LoadScreen extends StatelessWidget {
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
                       RaisedButton(
-                        onPressed: () => {},
+                        onPressed: () => {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => MenuPage()),
+                          )
+                        },
                         splashColor: Colors.grey[200],
                         textColor: Colors.white,
                         child: Text('Enter...',

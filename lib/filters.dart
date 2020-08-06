@@ -1,3 +1,5 @@
+import 'package:cluless1/load_screen.dart';
+import 'package:cluless1/wardrobe.dart';
 import 'package:flutter/material.dart';
 
 class FiltersPage extends StatefulWidget {
@@ -349,12 +351,17 @@ class _FiltersPageState extends State<FiltersPage> {
                   fontFamily: 'Bukhari', fontSize: 50, color: Colors.white)),
           leading: IconButton(
               icon: Icon(choices[0].icon, color: Colors.white, size: 40),
-              onPressed: () => {},
+              onPressed: () => {Navigator.pop(context)},
               splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
               icon: Icon(choices[1].icon, color: Colors.white, size: 40),
-              onPressed: () => {},
+              onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoadScreen()),
+                )
+              },
             )
           ]),
       bottomNavigationBar: BottomAppBar(
@@ -364,23 +371,25 @@ class _FiltersPageState extends State<FiltersPage> {
               height: 75,
               child: Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    IconButton(
-                      iconSize: 40.0,
-                      // padding: EdgeInsets.only(left: 10),
-                      icon:
-                          Icon(choices[2].icon, color: Colors.white, size: 60),
-                      onPressed: () => {},
-                      splashColor: Colors.grey,
-                    ),
-                    IconButton(
-                        iconSize: 40.0,
-                        // padding: EdgeInsets.only(right: 0),
-                        icon: Icon(choices[3].icon,
-                            color: Colors.white, size: 50),
-                        onPressed: () => {},
-                        splashColor: Colors.grey)
+                    RaisedButton(
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => WardrobePage()),
+                          );
+                        },
+                        color: Colors.transparent,
+                        splashColor: Colors.grey,
+                        child: Text(
+                          'Done.',
+                          style: TextStyle(
+                              fontFamily: 'AbhayaLibre',
+                              color: Colors.white,
+                              fontSize: 50),
+                        ))
                   ]))),
     ));
   }

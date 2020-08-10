@@ -25,13 +25,13 @@ List<Clothes> clothes = <Clothes>[
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
   Clothes(
-      imgPath: 'images/snow.png',
+      imgPath: 'images/shorts.jpg',
       item: [options[0], options[4]],
       season: [seasons[0], seasons[3]],
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
   Clothes(
-      imgPath: 'images/skirt.jpg',
+      imgPath: 'images/tshirt.jpg',
       item: [options[0], options[4]],
       season: [seasons[0], seasons[3]],
       weather: [imgs[0], imgs[1]],

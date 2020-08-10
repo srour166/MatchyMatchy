@@ -1,6 +1,7 @@
 import 'package:cluless1/filters.dart';
 import 'package:cluless1/load_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:cluless1/icons.dart';
 
 class WardrobePage extends StatefulWidget {
   @override
@@ -46,7 +47,7 @@ class _WardrobePageState extends State<WardrobePage> {
                               alignment: MainAxisAlignment.start,
                               children: <Widget>[
                                 IconButton(
-                                  icon: Icon(choices[3].icon,
+                                  icon: Icon(icon_choices[3].icon,
                                       color: Colors.grey[200], size: 30),
                                   onPressed: () => {},
                                   splashColor: Colors.grey,
@@ -66,12 +67,12 @@ class _WardrobePageState extends State<WardrobePage> {
               style: TextStyle(
                   fontFamily: 'Bukhari', fontSize: 50, color: Colors.white)),
           leading: IconButton(
-              icon: Icon(choices[0].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[0].icon, color: Colors.white, size: 40),
               onPressed: () => {Navigator.pop(context)},
               splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
-              icon: Icon(choices[1].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[1].icon, color: Colors.white, size: 40),
               onPressed: () => {
                 Navigator.push(
                   context,
@@ -92,15 +93,15 @@ class _WardrobePageState extends State<WardrobePage> {
                     IconButton(
                       iconSize: 40.0,
                       // padding: EdgeInsets.only(left: 10),
-                      icon:
-                          Icon(choices[2].icon, color: Colors.white, size: 60),
+                      icon: Icon(icon_choices[2].icon,
+                          color: Colors.white, size: 60),
                       onPressed: () => {},
                       splashColor: Colors.grey,
                     ),
                     IconButton(
                         iconSize: 40.0,
                         // padding: EdgeInsets.only(right: 0),
-                        icon: Icon(choices[3].icon,
+                        icon: Icon(icon_choices[3].icon,
                             color: Colors.white, size: 50),
                         onPressed: () => {},
                         splashColor: Colors.grey)
@@ -108,17 +109,3 @@ class _WardrobePageState extends State<WardrobePage> {
     ));
   }
 }
-
-class Choice {
-  const Choice({this.title, this.icon});
-
-  final String title;
-  final IconData icon;
-}
-
-const List<Choice> choices = const <Choice>[
-  const Choice(title: 'back', icon: Icons.arrow_back),
-  const Choice(title: 'home', icon: Icons.home),
-  const Choice(title: 'add', icon: Icons.add),
-  const Choice(title: 'trash', icon: Icons.delete),
-];

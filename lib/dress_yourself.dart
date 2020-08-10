@@ -4,7 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:cluless1/load_screen.dart';
 import 'package:cluless1/clothes.dart';
-import 'package:cluless1/filters.dart';
+// import 'package:cluless1/filters.dart';
+import 'package:cluless1/icons.dart';
+import 'dart:math';
+
+Random rnd = new Random();
 
 class DressYourselffPage extends StatefulWidget {
   @override
@@ -12,34 +16,43 @@ class DressYourselffPage extends StatefulWidget {
 }
 
 class _DressYourselffPageState extends State<DressYourselffPage> {
-  int photoIndex = 0;
+  Widget _bulidImgSlider(Slider slider) {
+    print(clothes[slider.index].imgPath);
+    print(slider.index);
+    void _previousImage() {
+      setState(() {
+        if (slider.index > 0) {
+          slider.index = slider.index - 1;
+        } else {
+          slider.index = clothes.length - 1;
+        }
+        // slider.index = slider.index > 0 ? slider.index - 1 : 0;
+      });
+    }
 
-  void _previousImage() {
-    setState(() {
-      photoIndex = photoIndex > 0 ? photoIndex - 1 : 0;
-    });
-  }
+    void _nextImage() {
+      setState(() {
+        if (slider.index < clothes.length - 1) {
+          slider.index = slider.index + 1;
+        } else {
+          slider.index = 0;
+        }
 
-  void _nextImage() {
-    setState(() {
-      photoIndex =
-          photoIndex < clothes.length - 1 ? photoIndex + 1 : photoIndex;
-    });
-  }
+        // slider.index =
+        //     slider.index < clothes.length - 1 ? slider.index + 1 : slider.index;
+      });
+    }
 
-//a list of sliders with a getter to get
-
-  Widget _bulidImgSlider(double boxSize, double buttonSize, double space) {
     return Container(
         color: Colors.white,
-        height: boxSize,
-        width: boxSize,
+        height: slider.boxSize,
+        width: slider.boxSize,
         child: Stack(children: [
           Center(
             child: Container(
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(clothes[photoIndex].imgPath),
+                      image: AssetImage(clothes[slider.index].imgPath),
                       fit: BoxFit.cover)),
             ),
           ),
@@ -55,9 +68,9 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
                           child: Image(
                             image: AssetImage('images/prev.png'),
                             fit: BoxFit.cover,
-                            height: buttonSize,
+                            height: slider.buttonSize,
                           ))),
-                  SizedBox(width: space),
+                  SizedBox(width: slider.space),
                   GestureDetector(
                       onTap: _nextImage,
                       child: Container(
@@ -65,7 +78,7 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
                           child: Image(
                               image: AssetImage('images/next.png'),
                               fit: BoxFit.cover,
-                              height: buttonSize))),
+                              height: slider.buttonSize))),
                 ],
               ))
         ]));
@@ -80,21 +93,21 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
           child: Row(children: <Widget>[
             SizedBox(width: 15),
             Column(children: <Widget>[
-              _bulidImgSlider(170, 35, 70),
+              _bulidImgSlider(sliders[0]),
               Container(height: 20),
-              _bulidImgSlider(170, 35, 70),
+              _bulidImgSlider(sliders[1]),
               Container(height: 20),
-              _bulidImgSlider(170, 35, 70),
+              _bulidImgSlider(sliders[2]),
             ]),
             SizedBox(width: 20),
             Column(children: <Widget>[
-              _bulidImgSlider(125, 15, 10),
+              _bulidImgSlider(sliders[3]),
               Container(height: 20),
-              _bulidImgSlider(125, 15, 10),
+              _bulidImgSlider(sliders[4]),
               Container(height: 20),
-              _bulidImgSlider(125, 15, 10),
+              _bulidImgSlider(sliders[5]),
               Container(height: 20),
-              _bulidImgSlider(125, 15, 10),
+              _bulidImgSlider(sliders[6]),
             ]),
           ]),
           alignment: Alignment.center,
@@ -107,12 +120,12 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
               style: TextStyle(
                   fontFamily: 'Bukhari', fontSize: 35, color: Colors.white)),
           leading: IconButton(
-              icon: Icon(choices[0].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[0].icon, color: Colors.white, size: 40),
               onPressed: () => {Navigator.pop(context)},
               splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
-              icon: Icon(choices[1].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[1].icon, color: Colors.white, size: 40),
               onPressed: () => {
                 Navigator.push(
                   context,
@@ -133,15 +146,23 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
                     IconButton(
                       iconSize: 40.0,
                       // padding: EdgeInsets.only(left: 10),
-                      icon:
-                          Icon(choices[2].icon, color: Colors.white, size: 60),
+                      icon: Icon(icon_choices[5].icon,
+                          color: Colors.red, size: 60),
                       onPressed: () => {},
                       splashColor: Colors.grey,
                     ),
+                    Container(width: 100),
                     IconButton(
                         iconSize: 40.0,
                         // padding: EdgeInsets.only(right: 0),
-                        icon: Icon(choices[3].icon,
+                        icon: Icon(icon_choices[4].icon,
+                            color: Colors.white, size: 50),
+                        onPressed: () => {},
+                        splashColor: Colors.grey),
+                    IconButton(
+                        iconSize: 40.0,
+                        // padding: EdgeInsets.only(right: 0),
+                        icon: Icon(icon_choices[6].icon,
                             color: Colors.white, size: 50),
                         onPressed: () => {},
                         splashColor: Colors.grey)
@@ -150,16 +171,49 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
   }
 }
 
-class Choice {
-  const Choice({this.title, this.icon});
+class Slider {
+  Slider({this.boxSize, this.buttonSize, this.space, this.index});
 
-  final String title;
-  final IconData icon;
+  double boxSize;
+  double buttonSize;
+  double space;
+  int index;
 }
 
-const List<Choice> choices = const <Choice>[
-  const Choice(title: 'back', icon: Icons.arrow_back),
-  const Choice(title: 'home', icon: Icons.home),
-  const Choice(title: 'add', icon: Icons.add),
-  const Choice(title: 'trash', icon: Icons.delete),
+List<Slider> sliders = <Slider>[
+  Slider(
+      boxSize: 170,
+      buttonSize: 35,
+      space: 70,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 170,
+      buttonSize: 35,
+      space: 70,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 170,
+      buttonSize: 35,
+      space: 70,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 125,
+      buttonSize: 25,
+      space: 45,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 125,
+      buttonSize: 25,
+      space: 45,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 125,
+      buttonSize: 25,
+      space: 45,
+      index: rnd.nextInt(clothes.length)),
+  Slider(
+      boxSize: 125,
+      buttonSize: 25,
+      space: 45,
+      index: rnd.nextInt(clothes.length)),
 ];

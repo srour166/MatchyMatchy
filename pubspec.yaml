@@ -73,6 +73,8 @@ flutter:
     - images/yellowcheck.png
     - images/prev.png
     - images/next.png
+    - images/shorts.jpg
+    - images/tshirt.jpg
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -1,6 +1,7 @@
 import 'package:cluless1/load_screen.dart';
 import 'package:cluless1/wardrobe.dart';
 import 'package:flutter/material.dart';
+import 'package:cluless1/icons.dart';
 
 class FiltersPage extends StatefulWidget {
   @override
@@ -350,12 +351,12 @@ class _FiltersPageState extends State<FiltersPage> {
               style: TextStyle(
                   fontFamily: 'Bukhari', fontSize: 50, color: Colors.white)),
           leading: IconButton(
-              icon: Icon(choices[0].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[0].icon, color: Colors.white, size: 40),
               onPressed: () => {Navigator.pop(context)},
               splashColor: Colors.grey),
           actions: <Widget>[
             IconButton(
-              icon: Icon(choices[1].icon, color: Colors.white, size: 40),
+              icon: Icon(icon_choices[1].icon, color: Colors.white, size: 40),
               onPressed: () => {
                 Navigator.push(
                   context,
@@ -517,20 +518,6 @@ List<Options> options = <Options>[
       checkbox: false,
       imgPath: 'images/circle.png',
       type: 'tag'),
-];
-
-class Choice {
-  const Choice({this.title, this.icon});
-
-  final String title;
-  final IconData icon;
-}
-
-const List<Choice> choices = const <Choice>[
-  const Choice(title: 'back', icon: Icons.arrow_back),
-  const Choice(title: 'home', icon: Icons.home),
-  const Choice(title: 'add', icon: Icons.add),
-  const Choice(title: 'trash', icon: Icons.delete),
 ];
 
 class Seasons {

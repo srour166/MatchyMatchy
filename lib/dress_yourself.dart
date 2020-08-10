@@ -183,37 +183,37 @@ class Slider {
 List<Slider> sliders = <Slider>[
   Slider(
       boxSize: 170,
-      buttonSize: 35,
-      space: 70,
+      buttonSize: 40,
+      space: 10,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 170,
-      buttonSize: 35,
-      space: 70,
+      buttonSize: 40,
+      space: 10,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 170,
-      buttonSize: 35,
-      space: 70,
+      buttonSize: 40,
+      space: 10,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 125,
       buttonSize: 25,
-      space: 45,
+      space: 15,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 125,
       buttonSize: 25,
-      space: 45,
+      space: 15,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 125,
       buttonSize: 25,
-      space: 45,
+      space: 15,
       index: rnd.nextInt(clothes.length)),
   Slider(
       boxSize: 125,
       buttonSize: 25,
-      space: 45,
+      space: 15,
       index: rnd.nextInt(clothes.length)),
 ];

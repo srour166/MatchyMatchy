@@ -1,3 +1,4 @@
+// Helpful links:
 //https://www.youtube.com/watch?v=sC9qhNPvW1M
 
 import 'package:flutter/material.dart';
@@ -26,6 +27,50 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
     });
   }
 
+//a list of sliders with a getter to get
+
+  Widget _bulidImgSlider(double boxSize, double buttonSize, double space) {
+    return Container(
+        color: Colors.white,
+        height: boxSize,
+        width: boxSize,
+        child: Stack(children: [
+          Center(
+            child: Container(
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(clothes[photoIndex].imgPath),
+                      fit: BoxFit.cover)),
+            ),
+          ),
+          Align(
+              alignment: Alignment.bottomCenter,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  GestureDetector(
+                      onTap: _previousImage,
+                      child: Container(
+                          padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
+                          child: Image(
+                            image: AssetImage('images/prev.png'),
+                            fit: BoxFit.cover,
+                            height: buttonSize,
+                          ))),
+                  SizedBox(width: space),
+                  GestureDetector(
+                      onTap: _nextImage,
+                      child: Container(
+                          padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
+                          child: Image(
+                              image: AssetImage('images/next.png'),
+                              fit: BoxFit.cover,
+                              height: buttonSize))),
+                ],
+              ))
+        ]));
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,49 +78,23 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
       backgroundColor: Color(0xFFf4b75c),
       body: Container(
           child: Row(children: <Widget>[
+            SizedBox(width: 15),
             Column(children: <Widget>[
-              Container(
-                  color: Colors.white,
-                  height: 200,
-                  width: 200,
-                  child: Stack(children: [
-                    Center(
-                      child: Container(
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage(clothes[photoIndex].imgPath),
-                                fit: BoxFit.cover)),
-                        height: 300.0,
-                        width: 300.0,
-                      ),
-                    ),
-                    Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            GestureDetector(
-                                onTap: _previousImage,
-                                child: Container(
-                                    padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-                                    child: Image(
-                                      image: AssetImage('images/prev.png'),
-                                      fit: BoxFit.cover,
-                                      height: 50,
-                                    ))),
-                            SizedBox(width: 70.0),
-                            GestureDetector(
-                                onTap: _nextImage,
-                                child: Container(
-                                    padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-                                    child: Image(
-                                      image: AssetImage('images/next.png'),
-                                      fit: BoxFit.cover,
-                                      height: 50,
-                                    ))),
-                          ],
-                        ))
-                  ]))
+              _bulidImgSlider(170, 35, 70),
+              Container(height: 20),
+              _bulidImgSlider(170, 35, 70),
+              Container(height: 20),
+              _bulidImgSlider(170, 35, 70),
+            ]),
+            SizedBox(width: 20),
+            Column(children: <Widget>[
+              _bulidImgSlider(125, 15, 10),
+              Container(height: 20),
+              _bulidImgSlider(125, 15, 10),
+              Container(height: 20),
+              _bulidImgSlider(125, 15, 10),
+              Container(height: 20),
+              _bulidImgSlider(125, 15, 10),
             ]),
           ]),
           alignment: Alignment.center,

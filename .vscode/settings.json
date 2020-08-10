@@ -1,0 +1,8 @@
+{
+    "editor.formatOnSave": true,
+    "editor.quickSuggestions": true,
+    "editor.suggest.statusBar.visible": true,
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.console.closeOnEnd": true,
+    "debug.inlineValues": true
+}

@@ -71,6 +71,8 @@ flutter:
     - images/whitecheck.png
     - images/yellow.png
     - images/yellowcheck.png
+    - images/prev.png
+    - images/next.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

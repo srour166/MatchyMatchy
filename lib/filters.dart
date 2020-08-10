@@ -73,7 +73,7 @@ class _FiltersPageState extends State<FiltersPage> {
             )));
   }
 
-  Widget txtButton(Texts txt) {
+  Widget txtButton(Seasons txt) {
     return Container(
         padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
         height: 43,
@@ -271,10 +271,10 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    txtButton(texts[0]),
-                    txtButton(texts[1]),
-                    txtButton(texts[2]),
-                    txtButton(texts[3])
+                    txtButton(seasons[0]),
+                    txtButton(seasons[1]),
+                    txtButton(seasons[2]),
+                    txtButton(seasons[3])
                   ]),
                 ],
               ),
@@ -533,8 +533,8 @@ const List<Choice> choices = const <Choice>[
   const Choice(title: 'trash', icon: Icons.delete),
 ];
 
-class Texts {
-  Texts({this.title, this.color, this.selected, this.defaultColor});
+class Seasons {
+  Seasons({this.title, this.color, this.selected, this.defaultColor});
 
   Color defaultColor;
   String title;
@@ -542,23 +542,23 @@ class Texts {
   bool selected;
 }
 
-List<Texts> texts = <Texts>[
-  Texts(
+List<Seasons> seasons = <Seasons>[
+  Seasons(
       title: 'sum',
       color: Color(0xFFf966c3),
       selected: false,
       defaultColor: Color(0xFFf966c3)),
-  Texts(
+  Seasons(
       title: 'aut',
       color: Color(0xFFfaae3d),
       selected: false,
       defaultColor: Color(0xFFfaae3d)),
-  Texts(
+  Seasons(
       title: 'win',
       color: Color(0xFFac75ab),
       selected: false,
       defaultColor: Color(0xFFac75ab)),
-  Texts(
+  Seasons(
       title: 'spr',
       color: Color(0xFFabd2f6),
       selected: false,

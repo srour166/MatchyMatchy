@@ -32,46 +32,51 @@ class _DressYourselffPageState extends State<DressYourselffPage> {
         home: Scaffold(
       backgroundColor: Color(0xFFf4b75c),
       body: Container(
-          child: Column(children: <Widget>[
-            Center(
-                child: Stack(
-              children: [
-                Center(
-                  child: Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(clothes[photoIndex].imgPath),
-                            fit: BoxFit.cover)),
-                    height: 300.0,
-                    width: 300.0,
-                  ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    GestureDetector(
-                        onTap: _previousImage,
-                        child: Container(
-                            padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-                            child: Image(
-                              image: AssetImage('images/prev.png'),
-                              fit: BoxFit.cover,
-                              height: 70,
-                            ))),
-                    SizedBox(width: 100.0),
-                    GestureDetector(
-                        onTap: _nextImage,
-                        child: Container(
-                            padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-                            child: Image(
-                              image: AssetImage('images/next.png'),
-                              fit: BoxFit.cover,
-                              height: 70,
-                            ))),
-                  ],
-                )
-              ],
-            ))
+          child: Row(children: <Widget>[
+            Column(children: <Widget>[
+              Container(
+                  color: Colors.white,
+                  height: 200,
+                  width: 200,
+                  child: Stack(children: [
+                    Center(
+                      child: Container(
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage(clothes[photoIndex].imgPath),
+                                fit: BoxFit.cover)),
+                        height: 300.0,
+                        width: 300.0,
+                      ),
+                    ),
+                    Align(
+                        alignment: Alignment.bottomCenter,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            GestureDetector(
+                                onTap: _previousImage,
+                                child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
+                                    child: Image(
+                                      image: AssetImage('images/prev.png'),
+                                      fit: BoxFit.cover,
+                                      height: 50,
+                                    ))),
+                            SizedBox(width: 70.0),
+                            GestureDetector(
+                                onTap: _nextImage,
+                                child: Container(
+                                    padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
+                                    child: Image(
+                                      image: AssetImage('images/next.png'),
+                                      fit: BoxFit.cover,
+                                      height: 50,
+                                    ))),
+                          ],
+                        ))
+                  ]))
+            ]),
           ]),
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),

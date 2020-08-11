@@ -34,39 +34,13 @@ class _WardrobePageState extends State<WardrobePage> {
                         fontSize: 50,
                         color: Colors.black))),
             Container(),
-            Stack(children: [
-              Container(
-                  height: 500,
-                  child: GridView.count(
-                      scrollDirection: Axis.vertical,
-                      crossAxisCount: 2,
-                      children: List.generate(50, (index) {
-                        return Stack(children: [
-                          Center(
-                            child: Container(
-                              margin:
-                                  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
-                              decoration: BoxDecoration(
-                                  image: DecorationImage(
-                                      image: AssetImage(clothes[0].imgPath),
-                                      fit: BoxFit.cover)),
-                            ),
-                          ),
-                          // Container(
-                          //   margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
-                          //   color: Colors.white,
-                          // ),
-                          Align(
-                              alignment: Alignment.topLeft,
-                              child: IconButton(
-                                icon: Icon(icon_choices[3].icon,
-                                    color: Colors.black, size: 40),
-                                onPressed: () => {},
-                                // splashColor: Colors.grey,
-                              )),
-                        ]);
-                      }))),
-            ]),
+            Container(
+                height: 500,
+                child: GridView.extent(
+                  maxCrossAxisExtent: 200,
+                  scrollDirection: Axis.vertical,
+                  children: _buildGridTiles(clothes.length),
+                )),
           ]),
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),
@@ -119,4 +93,37 @@ class _WardrobePageState extends State<WardrobePage> {
                   ]))),
     ));
   }
+}
+
+List<Widget> _buildGridTiles(numOfTiles) {
+  List<Container> containers =
+      new List<Container>.generate(numOfTiles, (int index) {
+    final imgName = clothes[index].imgPath;
+    return new Container(
+      child: Stack(
+        children: [
+          Container(
+            margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(imgName), fit: BoxFit.cover)),
+          ),
+          Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                  // color: Colors.white,
+                  child: IconButton(
+                // splashColor: Colors.red,
+                icon:
+                    Icon(icon_choices[3].icon, color: Colors.black87, size: 40),
+                onPressed: () => {print('pressed')},
+                // splashColor: Colors.grey,
+              ))),
+        ],
+      ),
+
+      // child: new Image.asset(imgName),
+    );
+  });
+  return containers;
 }

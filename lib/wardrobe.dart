@@ -2,6 +2,7 @@ import 'package:cluless1/filters.dart';
 import 'package:cluless1/load_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:cluless1/icons.dart';
+import 'package:cluless1/clothes.dart';
 
 class WardrobePage extends StatefulWidget {
   @override
@@ -33,29 +34,39 @@ class _WardrobePageState extends State<WardrobePage> {
                         fontSize: 50,
                         color: Colors.black))),
             Container(),
-            Container(
-                height: 500,
-                child: GridView.count(
-                    scrollDirection: Axis.vertical,
-                    crossAxisCount: 2,
-                    children: List.generate(50, (index) {
-                      return Container(
-                        child: Card(
-                            margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
-                            color: Colors.white,
-                            child: ButtonBar(
-                              alignment: MainAxisAlignment.start,
-                              children: <Widget>[
-                                IconButton(
-                                  icon: Icon(icon_choices[3].icon,
-                                      color: Colors.grey[200], size: 30),
-                                  onPressed: () => {},
-                                  splashColor: Colors.grey,
-                                ),
-                              ],
-                            )),
-                      );
-                    }))),
+            Stack(children: [
+              Container(
+                  height: 500,
+                  child: GridView.count(
+                      scrollDirection: Axis.vertical,
+                      crossAxisCount: 2,
+                      children: List.generate(50, (index) {
+                        return Stack(children: [
+                          Center(
+                            child: Container(
+                              margin:
+                                  EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(clothes[0].imgPath),
+                                      fit: BoxFit.cover)),
+                            ),
+                          ),
+                          // Container(
+                          //   margin: EdgeInsets.fromLTRB(10.0, 10.0, 10.0, 5.0),
+                          //   color: Colors.white,
+                          // ),
+                          Align(
+                              alignment: Alignment.topLeft,
+                              child: IconButton(
+                                icon: Icon(icon_choices[3].icon,
+                                    color: Colors.black, size: 40),
+                                onPressed: () => {},
+                                // splashColor: Colors.grey,
+                              )),
+                        ]);
+                      }))),
+            ]),
           ]),
           alignment: Alignment.center,
           margin: EdgeInsets.fromLTRB(15, 0, 15, 0),

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "81571835358",
+    "firebase_url": "https://clueless-961cc.firebaseio.com",
+    "project_id": "clueless-961cc",
+    "storage_bucket": "clueless-961cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81571835358:android:70ddc65f485e067bb7c14f",
+        "android_client_info": {
+          "package_name": "com.example.cluless1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81571835358-n7u2e7i4velit8f8gmj6c87aegh0asg0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC3NAVv4LO8U1pJTG2EwOQK4xbikCo6NS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81571835358-n7u2e7i4velit8f8gmj6c87aegh0asg0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

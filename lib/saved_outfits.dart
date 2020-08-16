@@ -31,7 +31,7 @@ class _SavedOutfitsState extends State<_SavedOutfits> {
             child: Image(
               image: AssetImage(image.imgPath),
               color: image.color,
-              fit: BoxFit.cover,x
+              fit: BoxFit.cover,
               height: 45,
             )));
   }
@@ -73,7 +73,7 @@ class _SavedOutfitsState extends State<_SavedOutfits> {
                 new ListView.builder(
                   itemCount: outfits.length,
                   itemBuilder: (context, index) {
-                    return _myListView(BuildContext context, index);
+                    return _myListView(context, index);
                
                    })]) 
               )
@@ -137,64 +137,64 @@ class OutfitItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context, index) {
-          Container(
-            Card(
-            child: Row( children: [
-              Row(                 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                Expanded(child: Text(outfit.tag[0].title, style: TextStyle(fontSize:30, fontFamily: "Abhaya Libre.")
-                )),
-                Text(outfit.season[0].title)
-              ]),
-              Row( 
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                Image(image: outfit.fanciness[0]),
-                Image(image: outfit.weather[0]),
-                Expanded(child: Text( outfit.title, style: TextStyle(fontSize: 60, fontFamily: "Moontime")))
-              ]),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                Expanded(child: List<Images> outfit.elements[0-2])
-              ]),
-              Row( mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                Expanded(child: List<Images> outfit.elements[3-6])
-              ])])),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly ,
-                children:[
-                FlatButton(
-                onPressed: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DressYourselffPage()),
-                      )
-                    },
-                color: Color.fromRGBO(255, 102, 196, 255),
-                splashColor: Colors.grey,
-                child: Text('Edit',
-                    style: TextStyle(
-                        fontFamily: 'Moontime',
-                        fontSize: 50,
-                        color: Colors.pink))),
-              FlatButton(onPressed: () => {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => DressYourselffPage()),
-                      )
-                    },
-                color: Color.fromRGBO(255, 102, 196, 255),
-                splashColor: Colors.grey,
-                child: Text('Share',
-                    style: TextStyle(
-                        fontFamily: 'Moontime',
-                        fontSize: 50,
-                        color: Colors.pink)))
-              ]));
-  }
+    return Container(
+      child: Card(
+      child: Row( children: [
+        Row(                 
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Expanded(child: Text(outfit.tag[0].title, style: TextStyle(fontSize:30, fontFamily: "Abhaya Libre.")
+          )),
+          Text(outfit.season[0].title)
+        ]),
+        Row( 
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Image(image: outfit.fanciness[0]),
+          Image(image: outfit.weather[0]),
+          Expanded(child: Text( outfit.title, style: TextStyle(fontSize: 60, fontFamily: "Moontime")))
+        ]),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+          Expanded(child: List<Images> outfit.elements[0-2])
+        ]),
+        Row( mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+          Expanded(child: List<Images> outfit.elements[3-6])
+        ]),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly ,
+          children:[
+          FlatButton(
+          onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DressYourselffPage()),
+                )
+              },
+          color: Color.fromRGBO(255, 102, 196, 255),
+          splashColor: Colors.grey,
+          child: Text('Edit',
+              style: TextStyle(
+                  fontFamily: 'Moontime',
+                  fontSize: 50,
+                  color: Colors.pink))),
+        FlatButton(onPressed: () => {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => DressYourselffPage()),
+                )
+              },
+          color: Color.fromRGBO(255, 102, 196, 255),
+          splashColor: Colors.grey,
+          child: Text('Share',
+              style: TextStyle(
+                  fontFamily: 'Moontime',
+                  fontSize: 50,
+                  color: Colors.pink)))
+        ])])));
+}
 }
 
 Widget _myListView(BuildContext context, index) {

@@ -75,6 +75,12 @@ flutter:
     - images/next.png
     - images/shorts.jpg
     - images/tshirt.jpg
+    - images/heart.jpg
+    - images/cardigan.jpg
+    - images/collaredshirt.jpg
+    - images/fluffysandals.jpg
+    - images/stripyshirt.jpg
+    
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

@@ -20,20 +20,50 @@ class Clothes {
 List<Clothes> clothes = <Clothes>[
   Clothes(
       imgPath: 'images/skirt.jpg',
-      item: [options[0], options[4]],
+      item: [options[1]],
       season: [seasons[0], seasons[3]],
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
   Clothes(
       imgPath: 'images/shorts.jpg',
-      item: [options[0], options[4]],
+      item: [options[1]],
       season: [seasons[0], seasons[3]],
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
   Clothes(
       imgPath: 'images/tshirt.jpg',
-      item: [options[0], options[4]],
+      item: [options[1]],
       season: [seasons[0], seasons[3]],
+      weather: [imgs[0], imgs[1]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'images/cardigan.jpg',
+      item: [options[4]],
+      season: [seasons[1], seasons[2]],
+      weather: [imgs[1]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'images/stripytshirt.jpg',
+      item: [options[0]],
+      season: [seasons[0], seasons[1], seasons[2], seasons[4]],
+      weather: [imgs[0], imgs[1], imgs[2], imgs[3]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'images.fluffysandals.jpg',
+      item: [options[2]],
+      season: [seasons[0]],
+      weather: [imgs[0]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'collaredshirt.jpeg',
+      item: [options[0]],
+      season: [seasons[0], seasons[1], seasons[2]],
+      weather: [imgs[0], imgs[1]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'navytrainers.jpg',
+      item: [options[4]],
+      season: [seasons[0], seasons[1]],
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
 ];

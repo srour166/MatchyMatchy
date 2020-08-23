@@ -4,7 +4,6 @@ import 'package:cluless1/wardrobe.dart';
 import 'package:cluless1/filters.dart';
 import 'package:cluless1/menu.dart';
 import 'package:cluless1/dress_yourself.dart';
-import 'package:clueless1/saved_outfits.dart';
 
 void main() {
   runApp(MyApp());

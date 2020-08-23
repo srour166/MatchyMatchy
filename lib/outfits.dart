@@ -1,5 +1,8 @@
 import 'package:cluless1/clothes.dart';
+
 import 'package:cluless1/filters.dart';
+
+import 'package:cluless1/usefulClasses.dart';
 
 class Outfit {
   Outfit({
@@ -21,7 +24,7 @@ class Outfit {
   List<Images> fanciness;
 }
 
-List<Outfit> outfits = <Outfit>[
+List<Outfit> outfitsList = <Outfit>[
   Outfit(
       title: 'Clueless but embroidery',
       date: '24/07/20',

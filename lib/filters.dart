@@ -2,6 +2,8 @@ import 'package:cluless1/load_screen.dart';
 import 'package:cluless1/wardrobe.dart';
 import 'package:flutter/material.dart';
 import 'package:cluless1/icons.dart';
+import 'package:cluless1/customWidgets.dart';
+import 'package:cluless1/usefulClasses.dart';
 
 class FiltersPage extends StatefulWidget {
   @override
@@ -9,126 +11,6 @@ class FiltersPage extends StatefulWidget {
 }
 
 class _FiltersPageState extends State<FiltersPage> {
-  Widget itemCheckbox(Options option) {
-    return Column(
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-          width: 115,
-          child: Row(
-            children: <Widget>[
-              GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (option.checkbox == false) {
-                        option.imgPath = 'images/checked.png';
-                        option.checkbox = true;
-                      } else {
-                        option.imgPath = 'images/circle.png';
-                        option.checkbox = false;
-                      }
-                    });
-                  },
-                  child: Image(
-                    image: AssetImage(option.imgPath),
-                    fit: BoxFit.cover,
-                    // color: Colors.red,
-                    height: 20,
-                  )),
-              Container(
-                padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
-                child: Text(option.title,
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontFamily: 'OpenSans',
-                      color: Colors.black,
-                    )),
-              )
-            ],
-          ),
-        )
-      ],
-    );
-  }
-
-  Widget imgButton(Images image) {
-    return GestureDetector(
-        onTap: () {
-          setState(() {
-            if (image.selected == false) {
-              image.color = Colors.grey;
-              image.selected = true;
-            } else {
-              image.color = null;
-              image.selected = false;
-            }
-          });
-        },
-        child: Container(
-            padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-            child: Image(
-              image: AssetImage(image.imgPath),
-              color: image.color,
-              fit: BoxFit.cover,
-              height: 45,
-            )));
-  }
-
-  Widget txtButton(Seasons txt) {
-    return Container(
-        padding: EdgeInsets.fromLTRB(3, 0, 10, 0),
-        height: 43,
-        child: GestureDetector(
-            onTap: () {
-              setState(() {
-                if (txt.selected == false) {
-                  txt.color = Colors.grey;
-                  txt.selected = true;
-                } else {
-                  txt.color = txt.defaultColor;
-                  txt.selected = false;
-                }
-              });
-            },
-            child: Text(
-              txt.title,
-              style: TextStyle(
-                  fontFamily: 'Bukhari', fontSize: 29, color: txt.color),
-            )));
-  }
-
-  Widget colorCheckbox(Colours color) {
-    return Row(
-      children: <Widget>[
-        Container(
-          padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
-          width: 50,
-          child: Row(
-            children: <Widget>[
-              GestureDetector(
-                  onTap: () {
-                    setState(() {
-                      if (color.checkbox == false) {
-                        color.imgPath = color.checkedImgPath;
-                        color.checkbox = true;
-                      } else {
-                        color.imgPath = color.defaultImg;
-                        color.checkbox = false;
-                      }
-                    });
-                  },
-                  child: Image(
-                    image: AssetImage(color.imgPath),
-                    fit: BoxFit.cover,
-                    height: 30,
-                  )),
-            ],
-          ),
-        )
-      ],
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -167,20 +49,20 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    itemCheckbox(options[0]),
-                    itemCheckbox(options[1]),
+                    CustomCheckBox(option: options[0]),
+                    CustomCheckBox(option: options[1])
                   ]),
                   Row(children: <Widget>[
-                    itemCheckbox(options[2]),
-                    itemCheckbox(options[3]),
+                    CustomCheckBox(option: options[2]),
+                    CustomCheckBox(option: options[3])
                   ]),
                   Row(children: <Widget>[
-                    itemCheckbox(options[4]),
-                    itemCheckbox(options[5]),
+                    CustomCheckBox(option: options[4]),
+                    CustomCheckBox(option: options[5])
                   ]),
                   Row(children: <Widget>[
-                    itemCheckbox(options[6]),
-                    itemCheckbox(options[7]),
+                    CustomCheckBox(option: options[6]),
+                    CustomCheckBox(option: options[7])
                   ]),
                 ],
               ),
@@ -208,10 +90,10 @@ class _FiltersPageState extends State<FiltersPage> {
                   ),
                   alignment: Alignment.topLeft,
                 ),
-                colorCheckbox(colors[0]),
-                colorCheckbox(colors[1]),
-                colorCheckbox(colors[2]),
-                colorCheckbox(colors[3])
+                ColorCheckBox(color: colors[0]),
+                ColorCheckBox(color: colors[1]),
+                ColorCheckBox(color: colors[2]),
+                ColorCheckBox(color: colors[3]),
               ],
             ),
             Container(
@@ -236,16 +118,16 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    itemCheckbox(options[8]),
-                    itemCheckbox(options[9]),
+                    CustomCheckBox(option: options[8]),
+                    CustomCheckBox(option: options[9])
                   ]),
                   Row(children: <Widget>[
-                    itemCheckbox(options[10]),
-                    itemCheckbox(options[11]),
+                    CustomCheckBox(option: options[10]),
+                    CustomCheckBox(option: options[11])
                   ]),
                   Row(children: <Widget>[
-                    itemCheckbox(options[12]),
-                    itemCheckbox(options[13]),
+                    CustomCheckBox(option: options[12]),
+                    CustomCheckBox(option: options[13])
                   ]),
                 ],
               ),
@@ -272,10 +154,10 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    txtButton(seasons[0]),
-                    txtButton(seasons[1]),
-                    txtButton(seasons[2]),
-                    txtButton(seasons[3])
+                    TxtButton(txt: seasons[0]),
+                    TxtButton(txt: seasons[1]),
+                    TxtButton(txt: seasons[2]),
+                    TxtButton(txt: seasons[3]),
                   ]),
                 ],
               ),
@@ -302,10 +184,10 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    imgButton(imgs[0]),
-                    imgButton(imgs[1]),
-                    imgButton(imgs[2]),
-                    imgButton(imgs[3]),
+                    ImgButton(image: imgs[0]),
+                    ImgButton(image: imgs[1]),
+                    ImgButton(image: imgs[2]),
+                    ImgButton(image: imgs[3]),
                   ]),
                 ],
               ),
@@ -332,10 +214,10 @@ class _FiltersPageState extends State<FiltersPage> {
               Column(
                 children: <Widget>[
                   Row(children: <Widget>[
-                    imgButton(imgs[4]),
-                    imgButton(imgs[5]),
-                    imgButton(imgs[6]),
-                    imgButton(imgs[7]),
+                    ImgButton(image: imgs[4]),
+                    ImgButton(image: imgs[5]),
+                    ImgButton(image: imgs[6]),
+                    ImgButton(image: imgs[7]),
                   ]),
                 ],
               ),
@@ -393,201 +275,5 @@ class _FiltersPageState extends State<FiltersPage> {
                         ))
                   ]))),
     ));
-  }
-}
-
-class Options {
-  Options({this.title, this.checkbox, this.imgPath, this.type});
-
-  String title;
-  String type;
-  bool checkbox;
-  String imgPath;
-}
-
-class Colours {
-  Colours(
-      {this.title,
-      this.checkbox,
-      this.defaultImg,
-      this.checkedImgPath,
-      this.imgPath});
-
-  String title;
-  bool checkbox;
-  String defaultImg;
-  String checkedImgPath;
-  String imgPath;
-}
-
-List<Colours> colors = <Colours>[
-  Colours(
-      title: 'white',
-      checkbox: false,
-      defaultImg: 'images/white.png',
-      checkedImgPath: 'images/whitecheck.png',
-      imgPath: 'images/white.png'),
-  Colours(
-      title: 'pink',
-      checkbox: false,
-      defaultImg: 'images/pink.png',
-      checkedImgPath: 'images/pinkcheck.png',
-      imgPath: 'images/pink.png'),
-  Colours(
-      title: 'yellow',
-      checkbox: false,
-      defaultImg: 'images/yellow.png',
-      checkedImgPath: 'images/yellowcheck.png',
-      imgPath: 'images/yellow.png'),
-  Colours(
-      title: 'purple',
-      checkbox: false,
-      defaultImg: 'images/purple.png',
-      checkedImgPath: 'images/purplecheck.png',
-      imgPath: 'images/purple.png')
-];
-
-List<Options> options = <Options>[
-  Options(
-      title: 'tops',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'bottoms',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'shoes',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'one piece',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'outerwear',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'jewellery',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'bags',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'tights',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'item'),
-  Options(
-      title: 'basic',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-  Options(
-      title: 'work',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-  Options(
-      title: 'vintage',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-  Options(
-      title: 'masc',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-  Options(
-      title: 'pastel',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-  Options(
-      title: 'going out',
-      checkbox: false,
-      imgPath: 'images/circle.png',
-      type: 'tag'),
-];
-
-class Seasons {
-  Seasons({this.title, this.color, this.selected, this.defaultColor});
-
-  Color defaultColor;
-  String title;
-  Color color;
-  bool selected;
-}
-
-List<Seasons> seasons = <Seasons>[
-  Seasons(
-      title: 'sum',
-      color: Color(0xFFf966c3),
-      selected: false,
-      defaultColor: Color(0xFFf966c3)),
-  Seasons(
-      title: 'aut',
-      color: Color(0xFFfaae3d),
-      selected: false,
-      defaultColor: Color(0xFFfaae3d)),
-  Seasons(
-      title: 'win',
-      color: Color(0xFFac75ab),
-      selected: false,
-      defaultColor: Color(0xFFac75ab)),
-  Seasons(
-      title: 'spr',
-      color: Color(0xFFabd2f6),
-      selected: false,
-      defaultColor: Color(0xFFabd2f6)),
-];
-
-class Images {
-  Images({this.imgPath, this.color, this.selected});
-
-  String imgPath;
-  Color color;
-  bool selected;
-}
-
-List<Images> imgs = <Images>[
-  Images(imgPath: 'images/sun.png', color: null, selected: false),
-  Images(imgPath: 'images/wind.png', color: null, selected: false),
-  Images(imgPath: 'images/snow.png', color: null, selected: false),
-  Images(imgPath: 'images/rain.png', color: null, selected: false),
-  Images(imgPath: 'images/cap.png', color: null, selected: false),
-  Images(imgPath: 'images/thumbsup.png', color: null, selected: false),
-  Images(imgPath: 'images/sparkles.png', color: null, selected: false),
-  Images(imgPath: 'images/crown.png', color: null, selected: false),
-];
-
-class Drawhorizontalline extends CustomPainter {
-  Paint _paint;
-
-  Drawhorizontalline() {
-    _paint = Paint()
-      ..color = Colors.white
-      ..strokeWidth = 1
-      ..strokeCap = StrokeCap.round;
-  }
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    canvas.drawLine(Offset(-90.0, 0.0), Offset(90.0, 0.0), _paint);
-  }
-
-  @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return false;
   }
 }

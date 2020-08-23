@@ -75,12 +75,21 @@ flutter:
     - images/next.png
     - images/shorts.jpg
     - images/tshirt.jpg
+<<<<<<< HEAD
     - images/heart.jpg
     - images/cardigan.jpg
     - images/collaredshirt.jpg
     - images/fluffysandals.jpg
     - images/stripyshirt.jpg
     
+=======
+    - images/cardigan.jpg
+    - images/stripytshirt.jpg
+    - images/fluffysandals.jpg
+    - images/collaredshirt.jpeg
+    - images/navytrainers.jpg
+    - images/heart.png
+>>>>>>> e6fcb7279fc0c2d7b8683951f0d4a4bd195b3bf0
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

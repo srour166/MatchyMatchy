@@ -1,3 +1,4 @@
+import 'package:cluless1/addImg.dart';
 import 'package:cluless1/filters.dart';
 import 'package:cluless1/load_screen.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +81,13 @@ class _WardrobePageState extends State<WardrobePage> {
                       // padding: EdgeInsets.only(left: 10),
                       icon: Icon(icon_choices[2].icon,
                           color: Colors.white, size: 60),
-                      onPressed: () => {},
+                      onPressed: () => {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddImagePage()),
+                        )
+                      },
                       splashColor: Colors.grey,
                     ),
                     IconButton(

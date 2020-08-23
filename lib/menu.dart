@@ -1,4 +1,5 @@
 import 'package:cluless1/dress_yourself.dart';
+import 'package:cluless1/savedOutfits.dart';
 import 'package:cluless1/wardrobe.dart';
 import 'package:flutter/material.dart';
 
@@ -118,7 +119,13 @@ class _MenuPageState extends State<MenuPage> {
                     height: 70,
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: FlatButton(
-                        onPressed: () => {},
+                        onPressed: () => {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => SavedOutfitsPage()),
+                              )
+                            },
                         textColor: Colors.white,
                         color: Colors.white,
                         padding: EdgeInsets.fromLTRB(50, 0, 50, 0),

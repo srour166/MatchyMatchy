@@ -1,4 +1,4 @@
-import 'package:cluless1/filters.dart';
+import 'package:cluless1/usefulClasses.dart';
 
 class Clothes {
   Clothes(
@@ -50,18 +50,23 @@ List<Clothes> clothes = <Clothes>[
       fanciness: [imgs[5]]),
   Clothes(
       imgPath: 'images.fluffysandals.jpg',
+      season: [seasons[0], seasons[1], seasons[2], seasons[3]],
+      weather: [imgs[0], imgs[1], imgs[2], imgs[3]],
+      fanciness: [imgs[5]]),
+  Clothes(
+      imgPath: 'images/fluffysandals.jpg',
       item: [options[2]],
       season: [seasons[0]],
       weather: [imgs[0]],
       fanciness: [imgs[5]]),
   Clothes(
-      imgPath: 'collaredshirt.jpeg',
+      imgPath: 'images/collaredshirt.jpeg',
       item: [options[0]],
       season: [seasons[0], seasons[1], seasons[2]],
       weather: [imgs[0], imgs[1]],
       fanciness: [imgs[5]]),
   Clothes(
-      imgPath: 'navytrainers.jpg',
+      imgPath: 'images/navytrainers.jpg',
       item: [options[4]],
       season: [seasons[0], seasons[1]],
       weather: [imgs[0], imgs[1]],

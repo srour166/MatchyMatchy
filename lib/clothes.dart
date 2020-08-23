@@ -1,5 +1,4 @@
 import 'package:cluless1/usefulClasses.dart';
-import 'package:cluless1/usefulClasses.dart';
 
 class Clothes {
   Clothes(

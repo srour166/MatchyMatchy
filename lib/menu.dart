@@ -81,13 +81,7 @@ class _MenuPageState extends State<MenuPage> {
                     height: 70,
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: FlatButton(
-                        onPressed: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DressYourselffPage()),
-                              )
-                            },
+                        onPressed: () => {},
                         textColor: Colors.white,
                         color: Colors.white,
                         padding: EdgeInsets.fromLTRB(30, 0, 30, 0),
@@ -119,13 +113,7 @@ class _MenuPageState extends State<MenuPage> {
                     height: 70,
                     margin: EdgeInsets.fromLTRB(0, 0, 0, 20),
                     child: FlatButton(
-                        onPressed: () => {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => SavedOutfitsPage()),
-                              )
-                            },
+                        onPressed: () => {},
                         textColor: Colors.white,
                         color: Colors.white,
                         padding: EdgeInsets.fromLTRB(50, 0, 50, 0),
